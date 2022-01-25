@@ -11,3 +11,12 @@ parser.add_argument('--repo_location', dest='repo_location', default='.')
 parser.add_argument('--write', dest='write_to_file', action='store_true')
 parser.set_defaults(write=True)
 args = parser.parse_args()
+
+
+# boto
+dev = boto3.session.Session(profile_name='dev')
+
+    boto3.setup_default_session(profile_name='dev')
+#$ AWS_PROFILE=dev ipython
+#    >>> import boto3
+#    >>> s3dev = boto3.resource('s3')
